@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "64508868-1fc6-43cf-8b3a-421691cc4b93",
+		"name": "MTT Telecom API HabrCall",
+		"description": "Для статьи https://habr.com/ru/publication/670220/ ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18527656"
+	},
+	"item": [
+		{
+			"name": "createCustomerPrompt",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{pass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"createCustomerPrompt\",\r\n    \"params\":\r\n    {\r\n        \"customer_name\" : \"testcust_mtt\",\r\n        \"prompt_name\": \"116e\",\r\n        \"prompt_type\" : \"text\",\r\n        \"prompt_file_contents\": \"Ваш звонок важен для нас\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gapi.mtt.ru:6443/v1/api",
+					"protocol": "https",
+					"host": [
+						"gapi",
+						"mtt",
+						"ru"
+					],
+					"port": "6443",
+					"path": [
+						"v1",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCustomerPrompts",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{pass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"getCustomerPrompts\",\r\n    \"params\":\r\n    {\r\n        \"customer_name\": \"{{customer_name}}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gapi.mtt.ru:6443/v1/api",
+					"protocol": "https",
+					"host": [
+						"gapi",
+						"mtt",
+						"ru"
+					],
+					"port": "6443",
+					"path": [
+						"v1",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setSipCallControlUR",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{pass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"jsonrpc\":\"2.0\",\r\n    \"method\": \"setSipCallControlURL\",\r\n    \"params\": {\r\n        \"sip_id\": \"{{customer_name}}\",\r\n         \"url\": \"http://Ваш_домен.ru\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.mtt.ru/ipcr/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mtt",
+						"ru"
+					],
+					"path": [
+						"ipcr",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
