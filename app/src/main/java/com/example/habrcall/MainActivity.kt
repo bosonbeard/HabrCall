@@ -29,7 +29,7 @@ class MainActivity: AppCompatActivity() {
                     buttonCall.text="Позвонить кладовщику"
                 }
                 3 -> {
-                    textViewCall.text="ЗЗаказ комплектуется"
+                    textViewCall.text="Заказ комплектуется"
                     buttonCall.text="Позвонить курьеру"
                 }
                 else ->
